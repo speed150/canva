@@ -1,0 +1,40 @@
+﻿<Window x:Class="canva.MainWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ Width="1000" Height="300"
+ Title="Bieda Paint">
+    <Grid>
+
+        <Canvas Name="paintSurface" MouseDown="Canvas_MouseDown_1" MouseMove="Canvas_MouseMove_1" Width="Auto" MouseLeftButtonDown="paintSurface_MouseLeftButtonDown" >
+            <Canvas.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </Canvas.Background>
+        </Canvas>
+        <ToolBarPanel Margin="0,-1,0,0">
+            <ToolBar VerticalAlignment="Top">
+                <Menu>
+                    <MenuItem Header="Plik" HorizontalAlignment="Left">
+                        <MenuItem x:Name="pngSave" Header="Zapisz" Click="pngSave_Click"/>
+                    </MenuItem>
+                </Menu>
+                <Button x:Name="Draw" Content="Ołówek" Click="DrawButton_Click"/>
+                <Button x:Name="Point" Content="Punkt" Click="PointButton_Click"/>
+                <Button x:Name="Line" Content="Linia" Click="LineButton_Click"/>
+                <Button x:Name="mLine" Content="Łamana" Click="mLine_Click"/>
+                <Button x:Name="PenColor" Width="20" Height="20" Background="Black" Click="ColorButton_Click"/>
+                <Button x:Name="Filter" Content="Filtry" Click="Filter_Click"/>
+                <Button x:Name="Rubber" Content="Gumka" Click="Rubber_Click"/>
+                <Menu>
+                    <MenuItem Header="Kształty" HorizontalContentAlignment="Left">
+                        <MenuItem x:Name="DrawRect" Header="Kwadrat" Click="DrawRect_Click" />
+                        <MenuItem x:Name="Ellipse" Header="Koło" Click="Ellipse_Click"/>
+                        <MenuItem x:Name="DrawPoly" Header="Wielokąt" Click="DrawPoly_Click"/>
+                    </MenuItem>
+                </Menu>
+            </ToolBar>
+        </ToolBarPanel>
+
+    </Grid>
+
+
+</Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="canva.ColorPicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="ColorPicker" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+             <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="50" VerticalAlignment="Center">
+
+            <Label Content="Red"/>
+            <Slider Maximum="255" x:Name="Red" TickFrequency="1" IsSnapToTickEnabled="True"  ValueChanged="ColorChanged"/>
+            <TextBox Text="{Binding Value, ElementName=Red, UpdateSourceTrigger=PropertyChanged}" />
+            <Label Content="Green"/>
+            <Slider Maximum="255" x:Name="Green" TickFrequency="1" IsSnapToTickEnabled="True"  ValueChanged="ColorChanged" />
+            <TextBox Text="{Binding Value, ElementName=Green, UpdateSourceTrigger=PropertyChanged}" />
+            <Label Content="Blue"/>
+            <Slider Maximum="255" x:Name="Blue" TickFrequency="1" IsSnapToTickEnabled="True"  ValueChanged="ColorChanged"/>
+            <TextBox Text="{Binding Value, ElementName=Blue, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="50" VerticalAlignment="Center">
+            <Label Content="Hue"/>
+            <Slider Maximum="255" x:Name="Hue" TickFrequency="1" IsSnapToTickEnabled="True" Focusable="False" IsEnabled="False" />
+            <TextBox Focusable="False" Text="{Binding Value, ElementName=Hue, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False" />
+            <Label Content="Saturation"/>
+            <Slider Maximum="100" x:Name="Saturation" TickFrequency="1" IsSnapToTickEnabled="True" Focusable="False" IsEnabled="False"  />
+            <TextBox Text="{Binding Value, ElementName=Saturation, UpdateSourceTrigger=PropertyChanged}" Focusable="False" IsEnabled="False"/>
+            <Label Content="Lightness"/>
+            <Slider Maximum="100" x:Name="Lightness" TickFrequency="1" IsSnapToTickEnabled="True" Focusable="False"  IsEnabled="False"/>
+            <TextBox x:Name="LightnessText" Text="{Binding Value, ElementName=Lightness, UpdateSourceTrigger=PropertyChanged}" Focusable="False" IsEnabled="False"/>
+            
+        </StackPanel>
+        <Label Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="50" x:Name="PenColor" Background="Black" Height="25"/>
+    </Grid>
+</Window>
