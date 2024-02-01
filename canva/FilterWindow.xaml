@@ -18,7 +18,7 @@
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="Upload" Content="Dodaj Zdjęcie" Margin="15" Click="Upload_Click" />
 
-            <Button x:Name="Transform" Content="Użyj Filtru" Margin="15" Click="Transform_Click"/>
+            <Button x:Name="Transform" Content="Użyj Filtru Sobel" Margin="15" Click="Transform_Click"/>
             <Button x:Name="Filter" Content="Filtruj" Margin="15" Click="ApplyLinearFilterButton_Click"/>
             <Grid>
                 <Grid.ColumnDefinitions>
